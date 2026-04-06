@@ -12,6 +12,14 @@ head {
     height: 100%;
 
 }
+ .fullscreen-div { 
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+
+  padding: 20px;
+  width: 100%;
+}
 body {    
     position: relative;
     overflow: visible;
@@ -20,9 +28,11 @@ body {
     padding: 10px;
 }
 .item1, .item2, .item3 {
-    position: flex;
-  overflow: visible;
-  transition: transform 0.2s;
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 .item1:hover, .item2:hover, .item3:hover {
   transform: scale(0.1);
@@ -65,4 +75,9 @@ body {
   z-index: 10000;
 }
 
-
+@media (max-width: 600px) {
+  .tooltip {
+    font-size: 13px;
+    padding: 10px;
+  }
+}
